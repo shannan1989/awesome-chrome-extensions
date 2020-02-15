@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Kiwi",
+    "description": "本扩展旨在改善浏览网页内容时的体验！",
+    "version": "1.0.0",
+    "icons": {
+        "128": "assets/image/icon.png"
+    },
+    "browser_action": {
+        "default_icon": "assets/image/icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "css/global.css"
+            ],
+            "js": [
+                "js/jquery.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+}

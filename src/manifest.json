@@ -23,6 +23,17 @@
             ],
             "all_frames": true,
             "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "http://*.fotor.com.cn/FotorFrameV7.html*",
+                "https://*.fotor.com.cn/FotorFrameV7.html*"
+            ],
+            "js": [
+                "target/fotor/main.js"
+            ],
+            "all_frames": true,
+            "run_at": "document_end"
         }
     ],
     "background": {

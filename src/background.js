@@ -1,8 +1,12 @@
-console.log('Message from Mr Shannan!');
 
-// 监听所有请求的响应头
-chrome.webRequest.onResponseStarted.addListener(function (detail) {
-    console.log(detail);
-}, {
-    urls: ["<all_urls>"]
-}, ["responseHeaders"]);
+/* 将所有访问 a站 的请求，转到 b站 */
+chrome.webRequest.onBeforeRequest.addListener(
+    function (detail) {
+        return { redirectUrl: detail.url.replace('a.leleketang.com', 'www.leleketang.com') };
+    },
+    {
+        urls: ["*://a.leleketang.com/*"],
+        types: ["main_frame"]
+    },
+    ["blocking"]
+);

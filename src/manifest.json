@@ -43,7 +43,12 @@
     },
     "permissions": [
         "webRequest",
+        "webRequestBlocking",
         "tabs",
+        "contextMenus",
+        "storage",
+        "alarms",
+        "notifications",
         "http://*/*",
         "https://*/*"
     ]

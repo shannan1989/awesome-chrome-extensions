@@ -24,10 +24,10 @@ chrome.contextMenus.create({
 /* 将所有访问 a站 的请求，转到 b站 */
 chrome.webRequest.onBeforeRequest.addListener(
     function (detail) {
-        return { redirectUrl: detail.url.replace('a.leleketang.com', 'www.leleketang.com') };
+        return { redirectUrl: detail.url.replace('avmoo.sbs', 'avmoo.click') };
     },
     {
-        urls: ["*://a.leleketang.com/*"],
+        urls: ["*://avmoo.sbs/*"],
         types: ["main_frame"]
     },
     ["blocking"]

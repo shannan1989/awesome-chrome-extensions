@@ -10,3 +10,58 @@ chrome.webRequest.onBeforeRequest.addListener(
     },
     ["blocking"]
 );
+
+chrome.webRequest.onBeforeRequest.addListener(
+    function (detail) { },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["requestBody", "extraHeaders", "blocking"]
+);
+
+chrome.webRequest.onBeforeSendHeaders.addListener(
+    function (detail) {
+        for (var i = 0; i < detail.requestHeaders.length; i++) {
+            if (detail.requestHeaders[i].name === 'User-Agent') {
+                // TODO
+            }
+        }
+        return { requestHeaders: detail.requestHeaders };
+    },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["requestHeaders", "extraHeaders", "blocking"]
+);
+
+chrome.webRequest.onSendHeaders.addListener(
+    function (detail) { },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["requestHeaders", "extraHeaders"]
+);
+
+chrome.webRequest.onHeadersReceived.addListener(
+    function (detail) { },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["responseHeaders", "extraHeaders", "blocking"]
+);
+
+chrome.webRequest.onResponseStarted.addListener(
+    function (detail) { },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["responseHeaders", "extraHeaders"]
+);
+
+chrome.webRequest.onCompleted.addListener(
+    function (detail) { },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["responseHeaders", "extraHeaders"]
+);

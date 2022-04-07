@@ -3,6 +3,7 @@
     "name": "Kiwi",
     "description": "本扩展旨在改善浏览网页内容时的体验！",
     "version": "1.0.0",
+    "homepage_url": "https://www.shannanshuibei.net",
     "icons": {
         "128": "assets/image/icon.png"
     },

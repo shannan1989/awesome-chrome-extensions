@@ -11,6 +11,27 @@ chrome.webRequest.onBeforeRequest.addListener(
     ["blocking"]
 );
 
+/* 封禁特定网络请求 方法一 */
+chrome.webRequest.onBeforeRequest.addListener(
+    function (detail) {
+        return { cancel: detail.url.indexOf("://www.evil.com/") != -1 };
+    },
+    {
+        urls: ["<all_urls>"]
+    },
+    ["blocking"]
+);
+/* 封禁特定网络请求 方法二 */
+chrome.webRequest.onBeforeRequest.addListener(
+    function (detail) {
+        return { cancel: true };
+    },
+    {
+        urls: ["*://www.evil.com/*"]
+    },
+    ["blocking"]
+);
+
 chrome.webRequest.onBeforeRequest.addListener(
     function (detail) { },
     {

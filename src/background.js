@@ -1,4 +1,26 @@
 
+chrome.contextMenus.create({
+    title: "Kiwi右键菜单",
+    onclick: function () {
+        alert('您点击了Kiwi右键菜单！');
+        chrome.notifications.create(null, {
+            type: 'basic',
+            iconUrl: 'assets/image/icon.png',
+            title: '温馨提示',
+            message: '您点击了Kiwi右键菜单！'
+        });
+    }
+});
+
+chrome.contextMenus.create({
+    title: '使用百度搜索：%s', // %s表示选中的文字
+    contexts: ['selection'], // 只有当选中文字时才会出现此右键菜单
+    onclick: function (params) {
+        // 注意不能使用location.href，因为location是属于background的window对象
+        chrome.tabs.create({ url: 'https://www.baidu.com/s?ie=UTF-8&wd=' + encodeURI(params.selectionText) });
+    }
+});
+
 /* 将所有访问 a站 的请求，转到 b站 */
 chrome.webRequest.onBeforeRequest.addListener(
     function (detail) {

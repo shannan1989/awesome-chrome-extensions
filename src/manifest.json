@@ -27,11 +27,33 @@
         },
         {
             "matches": [
+                "https://www.instagram.com/*"
+            ],
+            "css": [
+                "targets/instagram/main.css"
+            ],
+            "js": [],
+            "all_frames": true,
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://www.furuke.com/*"
+            ],
+            "css": [
+                "targets/furuke/main.css"
+            ],
+            "js": [],
+            "all_frames": true,
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
                 "http://*.fotor.com.cn/FotorFrameV7.html*",
                 "https://*.fotor.com.cn/FotorFrameV7.html*"
             ],
             "js": [
-                "target/fotor/main.js"
+                "targets/fotor/main.js"
             ],
             "all_frames": true,
             "run_at": "document_end"
